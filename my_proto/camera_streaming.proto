@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service Camera {
+  rpc Analyse (stream ImageRequest) returns (stream ImageReply) {}
+}
+
+message ImageRequest {
+  bytes image = 1;
+}
+
+message ImageReply {
+  int32 reply = 1;
+}
